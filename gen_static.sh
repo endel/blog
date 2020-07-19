@@ -2,10 +2,10 @@
 
 # Define urls and https
 from_url=http://localhost:2368
-to_url=https://endel.me
+to_url=https://blog.endel.me
 to_https=true
 
-rm -R static
+sudo rm -R static
 
 
 # Copy blog content
