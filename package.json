@@ -4,7 +4,7 @@
   "description": "My personal blog",
   "main": "index.js",
   "scripts": {
-    "start": "ghost doctor && ghost start --dir ghost",
+    "start": "NODE_ENV=production ghost doctor && NODE_ENV=production ghost start --dir ghost",
     "build": "./gen_static.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
