@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ghost start --dir ghost",
     "build": "./gen_static.sh",
-    "publish": "npm run build && ./upload.sh",
+    "upload": "npm run build && ./upload.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines" : {
