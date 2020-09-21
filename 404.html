@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Endel → Brain#dump()</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="https://blog.endel.me/assets/built/screen.css?v=0c1487f8cb" />
+
+    <meta name="generator" content="Ghost 3.25" />
+    <link rel="alternate" type="application/rss+xml" title="Endel → Brain#dump()" href="https://blog.endel.me/rss/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" />
+
+<style>
+    pre[class*=language-] {
+        margin: 0 0 1.75em 0;
+        font-size: 1.5rem;
+    }
+    div.code-toolbar {
+        width: 100%;
+    }
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173006829-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-173006829-1');
+</script>
+
+</head>
+<body class="">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header">
+    <div class="outer site-nav-main">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+                <a class="site-nav-logo" href="https://blog.endel.me">Endel → Brain#dump()</a>
+            <div class="site-nav-content">
+                    <ul class="nav">
+    <li class="nav-home"><a href="https://blog.endel.me/">Home</a></li>
+    <li class="nav-projects"><a href="https://blog.endel.me/projects/">Projects</a></li>
+    <li class="nav-patreon"><a href="http://patreon.com/endel">Patreon</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+            <div class="social-links">
+                    <a class="social-link social-link-tw" href="https://twitter.com/endel" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+	        <a class="social-link social-link-tw" href="https://github.com/endel" title="GitHub" target="_blank" rel="noopener"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<path d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path></svg>
+</a>
+            </div>
+                <a class="rss-button" href="https://feedly.com/i/subscription/feed/https://blog.endel.me/rss/" title="RSS" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+</a>
+
+    </div>
+</nav>
+    </div>
+</div></header>
+
+<main id="site-main" class="site-main outer error-content">
+    <div class="inner">
+        <section class="error-message">
+            <h1 class="error-code">404</h1>
+            <p class="error-description">Page not found</p>
+            <a class="error-link" href="https://blog.endel.me">Go to the front page →</a>
+        </section>
+
+            <div class="post-feed">
+                <article class="post-card post tag-planning tag-kanban tag-indie ">
+
+    <a class="post-card-image-link" href="https://blog.endel.me/working-solo-how-to-stay-focused-and-motivated/">
+        <img class="post-card-image"
+            srcset="https://blog.endel.me/content/images/size/w300/2020/09/glenn-carstens-peters-RLw-UC03Gwc-unsplash-1.jpg 300w,
+                   https://blog.endel.me/content/images/size/w600/2020/09/glenn-carstens-peters-RLw-UC03Gwc-unsplash-1.jpgg 600w,
+                  https://blog.endel.me/content/images/size/w1000/2020/09/glenn-carstens-peters-RLw-UC03Gwc-unsplash-1.jpgpg 1000w,
+                 https://blog.endel.me/content/images/size/w2000/2020/09/glenn-carstens-peters-RLw-UC03Gwc-unsplash-1.jpgjpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.endel.me/content/images/size/w600/2020/09/glenn-carstens-peters-RLw-UC03Gwc-unsplash-1.jpg"
+            alt="Working Solo: How To Stay Focused and Motivated"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.endel.me/working-solo-how-to-stay-focused-and-motivated/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Planning</div>
+                <h2 class="post-card-title">Working Solo: How To Stay Focused and Motivated</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>This post is for anyone working on a side project, or passion project, and ends up feeling lost or stuck — ultimately resulting in an abandoned project, or shifting the attention</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Endel Dreyer
+                    </div>
+            
+                    <a href="https://blog.endel.me/author/endel/" class="static-avatar">
+                        <img class="author-profile-image" src="https://www.gravatar.com/avatar/c35f590e9178794d7f4c4f07192d3772?s=250&amp;d=mm&amp;r=x" alt="Endel Dreyer" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.endel.me/author/endel/">Endel Dreyer</a></span>
+                <span class="post-card-byline-date"><time datetime="2020-09-18">18 Sep 2020</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                <article class="post-card post tag-blogging ">
+
+    <a class="post-card-image-link" href="https://blog.endel.me/how-to-host-your-own-blog-with-ghost-github-pages/">
+        <img class="post-card-image"
+            srcset="https://blog.endel.me/content/images/size/w300/2020/07/ghost-1.jpeg 300w,
+                   https://blog.endel.me/content/images/size/w600/2020/07/ghost-1.jpegg 600w,
+                  https://blog.endel.me/content/images/size/w1000/2020/07/ghost-1.jpegeg 1000w,
+                 https://blog.endel.me/content/images/size/w2000/2020/07/ghost-1.jpegpeg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.endel.me/content/images/size/w600/2020/07/ghost-1.jpeg"
+            alt="How to host your own blog with  Ghost + GitHub Pages"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.endel.me/how-to-host-your-own-blog-with-ghost-github-pages/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Blogging</div>
+                <h2 class="post-card-title">How to host your own blog with  Ghost + GitHub Pages</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>It has been some time since I've been thinking on moving the small amount of posts I have on Medium to somewhere else, without a particular company "owning" the content</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Endel Dreyer
+                    </div>
+            
+                    <a href="https://blog.endel.me/author/endel/" class="static-avatar">
+                        <img class="author-profile-image" src="https://www.gravatar.com/avatar/c35f590e9178794d7f4c4f07192d3772?s=250&amp;d=mm&amp;r=x" alt="Endel Dreyer" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.endel.me/author/endel/">Endel Dreyer</a></span>
+                <span class="post-card-byline-date"><time datetime="2020-07-18">18 Jul 2020</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                <article class="post-card post tag-colyseus ">
+
+    <a class="post-card-image-link" href="https://blog.endel.me/colyseus-0-10-introducing-the-new-state-serialization-algorithm/">
+        <img class="post-card-image"
+            srcset="https://blog.endel.me/content/images/size/w300/2020/07/colyseus-0.10.x.png 300w,
+                   https://blog.endel.me/content/images/size/w600/2020/07/colyseus-0.10.x.pngg 600w,
+                  https://blog.endel.me/content/images/size/w1000/2020/07/colyseus-0.10.x.pngng 1000w,
+                 https://blog.endel.me/content/images/size/w2000/2020/07/colyseus-0.10.x.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.endel.me/content/images/size/w600/2020/07/colyseus-0.10.x.png"
+            alt="Colyseus 0.10: Introducing the New State Serialization Algorithm"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.endel.me/colyseus-0-10-introducing-the-new-state-serialization-algorithm/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Colyseus</div>
+                <h2 class="post-card-title">Colyseus 0.10: Introducing the New State Serialization Algorithm</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>I’m really excited to announce the release 0.10 of Colyseus. This version basically introduces a more performant state serialization algorithm and a different way of decoding the state</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Endel Dreyer
+                    </div>
+            
+                    <a href="https://blog.endel.me/author/endel/" class="static-avatar">
+                        <img class="author-profile-image" src="https://www.gravatar.com/avatar/c35f590e9178794d7f4c4f07192d3772?s=250&amp;d=mm&amp;r=x" alt="Endel Dreyer" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.endel.me/author/endel/">Endel Dreyer</a></span>
+                <span class="post-card-byline-date"><time datetime="2019-03-28">28 Mar 2019</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+            </div>
+    </div>
+</main>
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://blog.endel.me">Endel → Brain#dump()</a> &copy; 2020</section>
+                <nav class="site-footer-nav">
+                    <a href="https://blog.endel.me">Latest Posts</a>
+                    
+                    <a href="https://twitter.com/endel" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://github.com/endel" target="_blank" rel="noopener">GitHub</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://blog.endel.me/assets/built/casper.js?v=0c1487f8cb"></script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function() {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    
+
+    <script>
+    window.addEventListener('DOMContentLoaded', (event) => {      
+        document.querySelectorAll('pre[class*=language-]').forEach(function(node) {
+            node.classList.add('line-numbers');
+		});
+        Prism.highlightAll();
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-typescript.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-css.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-bash.min.js"></script>
+
+</body>
+</html>
